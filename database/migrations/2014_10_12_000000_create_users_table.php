@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('institute');
             $table->string('class');
             $table->string('subject');
+            $table->string('user_type');
             $table->rememberToken();
             $table->timestamps();
         });

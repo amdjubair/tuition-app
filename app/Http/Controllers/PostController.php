@@ -48,6 +48,18 @@ public function __construct()
      */
     public function store(Request $request)
     {
+        $request->validate([
+
+            'institute'=>'required',
+            'class'=>'required',
+            'subject'=>'required',
+            'payment'=>'required',
+            'days'=>'required',
+            'address'=>'required',
+            'contact'=>'required',
+            'joiningdate'=>'required',
+        ]);
+
         $post=new Post(); 
         $post->user_id=auth()->user()->id;
         $post->institute=request('institute');

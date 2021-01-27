@@ -20,9 +20,11 @@ class Comment extends Eloquent
 		return $this->belongsTo('App\User');
 	}
 
+	
+
 
 	protected $fillable=[
-
+		'parent_id',
 		'user_id',
 		'post_id',
 		'body'

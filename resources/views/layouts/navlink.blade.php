@@ -36,10 +36,14 @@
         
  
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" style="font-color:red" href="{{ route('logout') }}"
+            <a class="dropdown-item" style="color:black" href="{{ route('logout') }}"
                onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">
                 {{ __('Logout') }}
+            </a>
+            <a class="dropdown-item"  href="/profile/{{Auth::user()->id}}"
+            >
+                {{ __(Auth::user()->name) }}
             </a>
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

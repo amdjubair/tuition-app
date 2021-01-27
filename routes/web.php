@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Route::get('/', function () {
 
-    return view('index');
+    return view('home');
 });
  
 
@@ -55,11 +55,9 @@ Route::post('/saveuser', 'UserController@saveUser');
 
 
 
-//test profile page
+// profile page
 
-Route::get('/testprofile', function () {
-    return view('testprofile');
-});
+Route::get('/profile/{id}','UserController@show');
 
 
 //posts routes
@@ -74,6 +72,13 @@ Route::get('/post/{post}', 'PostController@show');
 
 Route::get('/post/{post}/comments', 'CommentController@store');
 
+
+//test
+
+
+Route::get('/test', function () {
+    return view('post.test');
+});
 
 
 

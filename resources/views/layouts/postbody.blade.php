@@ -1,21 +1,38 @@
 <div class="col-md-6">
   <div class="card flex-md-row mb-4 box-shadow h-md-250">
     <div class="card-body d-flex flex-column ">
-      <strong class="d-inline-block mb-2 text-primary">Post No:{{$post->id}}</strong>
+      <div style="background-color:#084C93;">
       
-      <h3 class="mb-0">
-        <a class="text-dark" href="#">Location:{{$post->address}}</a>
-      </h3>
+
+      @if($post->user->user_type=="Tutor")
+          <strong> <a style="font-size: 28px;color: cornflowerblue"> {{"Tuition Wanted ::::"}}</a></strong>
+      @endif
+
+      @if($post->user->user_type=="Guardian")
+           <strong> <a style="font-size: 28px;color: cornflowerblue  "> {{"Tutor Wanted :::: "}}</a></strong>
+      @endif
+
+      
+
+
+      <strong class="d-inline-block mb-2 text-primary"><a style="font-size: 28px">Post No:{{$post->id}}</a></strong>
+      
+      <h5 class="mb-0">
+        <a style="color:ghostwhite">Location: {{$post->address}}</a>
+      </h5><br>
+
     
       
         
-        <ul>
-          <li style="color: cornflowerblue"><b>Posted By : {{$post->user['name']}} on</b></li>
-          <li>Posted at:{{$post->created_at->toDayDateTimeString()}}</li>
-          <li>Tutor institute:{{$post->institute}}</li>
-          <li>class:{{$post->class}}</li>
+        <ul><h5>
+          <li ><a href="/profile/{{$post->user->id}}" style="color: ghostwhite">{{$post->user->name}}</a>  </li><br>
+          <li style="color:ghostwhite">Posted at: {{$post->created_at->toDayDateTimeString()}}</li><br>
+          <li style="color:ghostwhite">Tutor institute: {{$post->institute}}</li><br>
+          <li style="color:ghostwhite">Class: {{$post->class}}</li>
+        </h5>
         </ul>
-      <a href="/post/{{$post->id}}">See Full Post....</a>
+      <a href="/post/{{$post->id}}" style="font-size: 25px;color:ghostwhite"><button style="background-color: cornflowerblue;">Click to see full post</button></a>
+      </div>
     </div>
   </div>
 </div>

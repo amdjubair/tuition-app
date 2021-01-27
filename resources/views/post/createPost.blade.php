@@ -3,6 +3,15 @@
 
 @section('content')
 
+
+<!-- bootstrap linker -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+<!-- end linker -->
+
 <body>
   
 
@@ -17,13 +26,16 @@
 
                         
                         <div class="form-group row">
-                            <label class="col-md-4 col-form-label text-md-right"  multiple="multiple">institute:</label>
+                            <label class="col-md-4 col-form-label text-md-right"   required="required">Students/Tutor's Institute:</label>
                                <div class="col-md-6">
-                                  <select  name="institute" class="form-control" >
+                                  <select  name="institute" class="form-control"  >
                                     <option value="SUST" >SUST</option>
                                     <option value="DU" >DU</option>
+                                     <option value="DU" >BUET</option>
                                     <option value="BUTEX" >BUTEX</option>
+                                     <option value="DU" >CU</option>
                                     <option value="JU" >JU</option>
+                                     <option value="DU" >RU</option>
                                     <option value="JNU" >JNU</option>
                                     <option value="KUET" >KUET</option>
                                     <option value="RUET" >RUET</option>
@@ -31,47 +43,78 @@
                                     <option value="IUT" >IUT</option>
                                     <option value="MIST" >MIST</option>
                                     <option value="BAU" >BAU</option>
+                                    <option value="Blue-bird" >Blue-bird</option>
+                                    <option value="ScholarsHome" >ScholarsHome</option>
+                                      <option value="Sylhet Govt Pilot" >Sylhet Govt Pilot</option>
+                                        <option value="MC College" >MC College</option>
                                   </select>     
                                 </div>
                          </div>
 
                          <div class="form-group row">
-                             <label class="col-md-4 col-form-label text-md-right">class:</label>
+                             <label class="col-md-4 col-form-label text-md-right">Class:</label>
                              <div class="col-md-6">
-                               <select id='class' class="form-control" name="class[]" multiple >
+                               <select id='class' class="form-control" name="class[]" multiple  required="required">
+                                    <option value='6' >6</option>
+                                    <option value='8'>7</option>
                                     <option value='8'>8</option>
-                                    <option value='9'>9</option>
+                                    <option value='9' selected="selected">9</option>
                                     <option value='10'>10</option>
                                     <option value='11'>11</option>
-                                    <option value='12'>12</option>
+                                    <option value='12' >12</option>
+                                    <option value='admission test'>admission test</option>
                                   </select>
                              </div>
                          </div>
+                            <div class="form-group-row">
+                               
+                            </div>
 
                           <div class="form-group row">
                              <label class="col-md-4 col-form-label text-md-right"  >Subjects:</label>
                                <div class="col-md-6">
-                                  <select id='subject' name='subject[]' multiple class="form-control" >
-  
-                                      <option value='Physics'>Physics</option>
-                                    
+                                  <select id='subject' name='subject[]' multiple class="form-control" required="required" >
+                                      <option value='Physics' selected="selected">Physics</option>
                                       <option value='Chemistry'>Chemistry</option>
-                                    
-                                      <option value='Math'>Math</option>
-                                    
+                                      <option value='Biology'>Biology</option>
+                                      <option value='Higher Math'>HigherMath</option>
+                                      <option value='Math'>General Math</option>
                                       <option value='Ict'>ICT</option>
-                                    
                                       <option value='English'>English</option>
                                     
                                   </select>
                                 </div>
+
+                               
+                            </div>
+
+                             <label for="alert" class="col-md-9 col-form-label text-md-right">{{ __('Note: press ctrl button to select mutiple') }}</label>
+
+                            <div class="col-md-6">
+                                
                             </div>
                         
                          <div class="form-group row">
                             <label for="payment" class="col-md-4 col-form-label text-md-right">{{ __('Payment') }}</label>
 
                             <div class="col-md-6">
-                                <input id="text" type="text" class="form-control" name="payment"  required>
+                                <select id="text" type="text" class="form-control" name="payment" id=""  required>
+                                     <option value='3000'>3000</option>
+                                      <option value='3000'>3500</option>
+                                      <option value='3000'>4000</option>
+                                      <option value='3000'>4500</option>
+                                      <option value='3000'>5000</option>
+                                      <option value='3000'>5500</option>
+                                      <option value='3000'>6000</option>
+                                      <option value='3000'>6500</option>
+                                      <option value='3000'>7000</option>
+                                      <option value='3000'>7500</option>
+                                      <option value='3000'>8000</option>
+                                      <option value='3000'>8500</option>
+                                      <option value='3000'>9000</option>
+                                      <option value='3000'>9500</option>
+                                      <option value='3000'>10000</option>
+                                </select>
                             </div>
                         </div>
 
@@ -116,11 +159,6 @@
                                 </button>
                             </div>
                         </div>
-
-  
-
-
-                          
                        
                     </form>
                 </div>
@@ -131,7 +169,11 @@
 
 
 
+<script type="text/javascript">
+ $('select').selectpicker(); 
+</script>
 </body>
+
 
 @endsection
 

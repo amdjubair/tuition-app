@@ -78,9 +78,9 @@
                         </div>
 
                          <div class="form-group row">
-                            <label class="col-md-4 col-form-label text-md-right"  multiple="multiple" required>institute:</label>
+                            <label class="col-md-4 col-form-label text-md-right"   >Tutor/Student's Institute:</label>
                                <div class="col-md-6">
-                                  <select  name="institute" class="form-control" >
+                                  <select  name="institute" class="form-control" required="required" >
                                     <option value="SUST" >SUST</option>
                                     <option value="DU" >DU</option>
                                     <option value="BUTEX" >BUTEX</option>
@@ -92,51 +92,74 @@
                                     <option value="IUT" >IUT</option>
                                     <option value="MIST" >MIST</option>
                                     <option value="BAU" >BAU</option>
+                                    <option value="Blue-bird" >Blue-bird</option>
+                                    <option value="ScholarsHome" >ScholarsHome</option>
+                                      <option value="Sylhet Govt Pilot" >Sylhet Govt Pilot</option>
+                                        <option value="MC College" >MC College</option>
+
+
                                   </select>     
                                 </div>
                          </div>
 
                          <div class="form-group row">
-                             <label class="col-md-4 col-form-label text-md-right"  multiple="multiple "required>Classes:</label>
-                               <div class="col-md-6">
-                                  <select  name="class" class="form-control">
-                                    <option value="" >Select Class</option>
-                                    <option value="6" >6</option>
-                                    <option value="7" >7</option>
-                                    <option value="8" >8</option>
-                                    <option value="9" >9</option>
-                                    <option value="10" >10</option>
-                                    <option value="11" >11</option>
-                                     <option value="12" >12</option>
-                                    <option value="admission" >admission Test</option>
-                                  </select>     
-                                </div>
-                         </div>
-
-                         <div class="form-group row">
-                            <label class="col-md-4 col-form-label text-md-right"  multiple="multiple" required>Subjects:</label>
-                               <div class="col-md-6 ">
-                                  <select  name="subject" class="form-control">
-                                    <option value="" >Select Subjects</option>
-                                    <option value="physics" >Physics</option>
-                                    <option value="Chemistry" >Chemistry</option>
-                                    <option value="Biology" >Biology</option>
-                                    <option value="Higher Math">Higher Math</option>
-                                    <option value="General Math">General Math</option>
-                                    <option value="English">English</option>
-                                    <option value="Bangla">Bangla</option>
-                                    <option value="ICT">ICT</option>
-                                  </select>     
+                             <label class="col-md-4 col-form-label text-md-right">class:</label>
+                             <div class="col-md-6">
+                               <select id='class' class="form-control" name="class[]"  required="required" multiple="multiple" >
+                                    <option value='8'>8</option>
+                                    <option value='9'>9</option>
+                                    <option value='10'>10</option>
+                                    <option value='11'>11</option>
+                                    <option value='12'>12</option>
+                                  </select>
                              </div>
                          </div>
+
+                         <div class="form-group row">
+                             <label class="col-md-4 col-form-label text-md-right"  >Subjects:</label>
+                               <div class="col-md-6">
+                                  <select id='subject' name='subject[]' multiple class="form-control" required="required" >
+  
+                                      <option value='Physics'>Physics</option>
+                                    
+                                      <option value='Chemistry'>Chemistry</option>
+                                    
+                                      <option value='Math'>Math</option>
+                                      <option value='Biology'>Biology</option>
+                                    
+                                      <option value='Ict'>ICT</option>
+                                    
+                                      <option value='English'>English</option>
+                                    
+                                  </select>
+                                </div>
+                            </div>
+
+                             <label for="alert" class="col-md-9 col-form-label text-md-right">{{ __('Note: press ctrl button to select mutiple subjects and classes') }}</label>
+
+                            <div class="col-md-6">
+                                
+                            </div>
+
+                         <div class="form-group row">
+                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('SignUp as: ') }}</label>
+
+                            <div class="col-md-6">
+                                <select   class="form-control" name="user_type"  required />
+                                    <option value="">select user type</option>
+                                       <option value="Tutor">Tutor</option>
+                                          <option value="Guardian">Guardian</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                 <button type="submit" class="btn btn-primary">
+                                   <a href="{{route('login')}}" style="color: ghostwhite" > {{ __('Go to Login') }}</a>
                                 </button>
                             </div>
                         </div>

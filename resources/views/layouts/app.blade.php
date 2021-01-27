@@ -10,9 +10,12 @@
     <title>{{ config('app.name', 'Tuitionee') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>    
+    <script src="{{ asset('js/app.js') }}"></script>  
+    <script src="{{ asset('js/main.js') }}"></script>   
     <!-- script and css for multiple checkbox -->
-    <link rel="stylesheet" href="css/multiselect.css" >
+
+
+<!-- multiselect script-->
 
    
     

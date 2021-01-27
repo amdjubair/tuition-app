@@ -18,13 +18,12 @@ class CommentController extends Controller
     }
 
     public function store(Post $post){
-   
-    	Comment::validate([
-    		'body'=>'required'->min('8');
+  
 
-    	])
- 
+  			$this->validate(request(),[
 
+  				'body'=>'required'
+  			]);
     	Comment::create([
 
     		'post_id'=>$post->id,
